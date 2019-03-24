@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;     }
+        *::after,
+        *::before {
+            box-sizing: border-box
+        }
+        .actions{
+            position: absolute;
+            top: 0;right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .actions>button{
+            padding:8px 10px;
+            margin:10px;
+        }
+        .actions>button.active{
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, .6)
+        }
+        button:focus{
+            outline: none;
+        }
+        .code-wrapper{
+            border: 1px solid red;
+            height: 100vh;
+            /* width: 100vh; */
+            display: flex;
+            flex-direction: column;
+        }
+        #code{
+            border-bottom: 1px solid rebeccapurple;
+            overflow: scroll;
+        }
+        .code-wrapper>*{
+            height: 50%;
+        }
+        .preview {
+            width: 100%;
+            height: 190px;
+            position: relative;;
+        }
+
+    </style>
+
+
+    <style id='styleTag'></style>
+    <div class="code-wrapper">
+        <pre id="code">
+
+        </pre>
+        <div class="prevview-wrapper">
+            <div class="preview">
+                <div class="lowerLip-wrapper">
+                    <div class="lowerLip"></div>
+                </div>
+                    <div class="nose"></div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="face left"></div>
+                    <div class="face right"></div>
+                    <div class="upperLip left"></div>
+                    <div class="upperLip right"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button data-speed='slow'>慢</button>
+        <button data-speed='normal' class="active">中</button><button data-speed='fast'>快</button>
+    <button id=jump data-speed='jump'>跳过</button>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

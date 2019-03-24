@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * TOP-BAR...............顶部导航栏
+ * Banner...............Banner
+ */
+*{
+  background-color: rgba(0, 0, 0, 0.1);
+}
