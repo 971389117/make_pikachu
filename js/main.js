@@ -3,18 +3,17 @@
     let n=0
     let container=document.querySelector('#code')
         let styleTag=document.querySelector('#styleTag')
-
+    let isJump=false
     let id
     jump.addEventListener('click',function run(){
-        console.log(id,n)
-        container.innerHTML=code.substring(n-1,code.length-1)
-        styleTag.innerHTML=code.substring(n-1,code.length-1)
-        container.scrollTop=container.scrollHeight
-        clearTimeout(id)
+        isJump=true
     })
     function writeCode(prefix,code,fn){
         id= setTimeout(function run(){
             n+=1
+            if(isJump){
+                n=code.length
+            }
             container.innerHTML=code.substring(0,n)
             styleTag.innerHTML=code.substring(0,n)
             container.scrollTop=container.scrollHeight
@@ -23,6 +22,7 @@
             }else{
                 fn&&fn.call()
             }
+
         },duration)
     }
     let code =`
